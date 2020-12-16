@@ -1,0 +1,1 @@
+Copied texture files from images folder to new created texture folder.

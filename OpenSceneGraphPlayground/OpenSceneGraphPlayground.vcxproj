@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7c42b165-3d0c-45e4-8f29-467e23e1fcc4}</ProjectGuid>
+    <RootNamespace>OpenSceneGraphPlayground</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Debug\include;$(SolutionDir)Dependencies\glew-2.1.0\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Debug\lib;$(SolutionDir)Dependencies\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>osgViewerd.lib;osgDBd.lib;osgd.lib;osgUtild.lib;osgGAd.lib;opengl32.lib;glu32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Debug\bin" "$(TargetDir)"
+xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData"
+xcopy /E /Y  "$(SolutionDir)Dependencies\glew-2.1.0\bin\Release\x64" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\include;$(SolutionDir)Dependencies\glew-2.1.0\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\lib;$(SolutionDir)Dependencies\glew-2.1.0\lib\Release\x64;$(ProjectDir)libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>osgViewer.lib;osgDB.lib;osg.lib;osgUtil.lib;osgGA.lib;opengl32.lib;glu32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\bin\osgPlugins-3.6.5" "$(TargetDir)osgPlugins-3.6.5"
+xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData"
+xcopy /E /Y  "$(SolutionDir)Dependencies\glew-2.1.0\bin\Release\x64" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Options\GraphOptions\AddorAdjustLodNodeOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddOrAdjustSwitchNodeOption.cpp" />
+    <ClCompile Include="src\Options\StateSetOptions\AddShaderOption.cpp" />
+    <ClCompile Include="src\Options\StateSetOptions\AdjustRenderingHintOption.cpp" />
+    <ClCompile Include="src\Options\StateSetOptions\AdjustBlendFunctionOption.cpp" />
+    <ClCompile Include="src\Options\StateSetOptions\AdjustPolygonModeOption.cpp" />
+    <ClCompile Include="src\Options\StateSetOption.cpp" />
+    <ClCompile Include="src\Options\StateSetOptions\AdjustLightStateOption.cpp" />
+    <ClCompile Include="src\UtilityFunctions.cpp" />
+    <ClCompile Include="src\Options\StateSetOptions\AdjustStateOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddLightSourceOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddGroupOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddGeodeOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddGeometryOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddIndexedGeometryOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddNodeFromFileOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddMatrixTransformOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\DeleteNodeOption.cpp" />
+    <ClCompile Include="src\Options\GraphOptions\AddShapeDrawableOption.cpp" />
+    <ClCompile Include="src\TreeGeneratorVisitor.cpp" />
+    <ClCompile Include="src\PlaygroundImGuiHandler.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\OsgImGuiHandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Options\GraphOptions\AddGeodeOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddGeometryOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddGroupOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddIndexedGeometryOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddLightSourceOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddOrAdjustLodNodeOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddNodeFromFileOption.h" />
+    <ClInclude Include="include\Options\StateSetOptions\AddShaderOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddShapeDrawableOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddMatrixTransformOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\AddOrAdjustSwitchNodeOption.h" />
+    <ClInclude Include="include\Options\StateSetOptions\AdjustBlendFunctionOption.h" />
+    <ClInclude Include="include\Options\StateSetOptions\AdjustLightStateOption.h" />
+    <ClInclude Include="include\Options\StateSetOptions\AdjustPolygonModeOption.h" />
+    <ClInclude Include="include\Options\StateSetOptions\AdjustRenderingHintOption.h" />
+    <ClInclude Include="include\Options\GraphOptions\DeleteNodeOption.h" />
+    <ClInclude Include="include\Options\GraphOption.h" />
+    <ClInclude Include="include\GlewInitOperation.h" />
+    <ClInclude Include="include\Options\StateSetOption.h" />
+    <ClInclude Include="include\UtilityFunctions.h" />
+    <ClInclude Include="include\imgui\imconfig.h" />
+    <ClInclude Include="include\imgui\imgui.h" />
+    <ClInclude Include="include\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="include\imgui\imgui_internal.h" />
+    <ClInclude Include="include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="include\imgui\imstb_textedit.h" />
+    <ClInclude Include="include\imgui\imstb_truetype.h" />
+    <ClInclude Include="include\OsgImGuiHandler.hpp" />
+    <ClInclude Include="include\PlaygroundImGuiHandler.h" />
+    <ClInclude Include="include\TreeGeneratorVisitor.h" />
+    <ClInclude Include="include\Options\StateSetOptions\AdjustStateOption.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
