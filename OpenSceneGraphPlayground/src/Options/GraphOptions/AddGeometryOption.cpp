@@ -23,7 +23,7 @@ void AddGeometryOption::displayGraphOption(TreeGeneratorVisitor* currentTreeGene
 
 		if (inputVertices.size() > 1) {
 			ImGui::SameLine();
-			if (ImGui::Button("Remove last vertex")) {
+			if (ImGui::Button("Remove Last Vertex")) {
 				float* arrayToDelete = inputVertices.at(inputVertices.size() - 1);
 				delete(arrayToDelete);
 				inputVertices.pop_back();

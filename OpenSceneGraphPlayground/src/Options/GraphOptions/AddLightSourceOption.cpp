@@ -10,11 +10,11 @@ void AddLightSourceOption::displayGraphOption(TreeGeneratorVisitor* currentTreeG
 {
 	if (ImGui::TreeNode("Add Light Source")) {
 
-		UtilityFunctions::displayImGuiComboBox("Shape to add", lightSourceTypes, lightSourceTypeSelectionIndex);
+		UtilityFunctions::displayImGuiComboBox("Shape to Add", lightSourceTypes, lightSourceTypeSelectionIndex);
 
 		//Only 8 light sources are supported
 		if (currentTreeGeneratorVisitor->currentLightCounter < 8) {
-			ImGui::Checkbox("Overwrite default light", &overwriteDefaultLightInput);
+			ImGui::Checkbox("Overwrite Default Light", &overwriteDefaultLightInput);
 
 			//Directional is selected
 			if (lightSourceTypeSelectionIndex == 0) {
