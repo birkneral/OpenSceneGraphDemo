@@ -3,9 +3,7 @@
 #include <filesystem>
 #include <iostream>
 
-#include <osgGA\FlightManipulator>
-#include <osgGA\NodeTrackerManipulator>
-#include <osgGA\TrackballManipulator>
+#include <osgGA/TrackballManipulator>
 #include <osg/ShapeDrawable>
 #include <osg/Geode>
 

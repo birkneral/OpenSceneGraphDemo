@@ -124,11 +124,11 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>osgViewerd.lib;osgDBd.lib;osgd.lib;osgUtild.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>osgViewerd.lib;osgDBd.lib;osgd.lib;osgUtild.lib;osgGAd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Debug\bin" "$(TargetDir)"
-xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData"</Command>
+xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,11 +147,11 @@ xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)Open
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>osgViewer.lib;osgDB.lib;osg.lib;osgUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>osgViewer.lib;osgDB.lib;osg.lib;osgUtil.lib;osgGA.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\bin\osgPlugins-3.6.5" "$(TargetDir)osgPlugins-3.6.5"
-xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData"</Command>
+      <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\bin\osgPlugins-3.6.5" "$(TargetDir)osgPlugins-3.6.5\"
+xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

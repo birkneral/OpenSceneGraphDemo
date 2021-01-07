@@ -78,11 +78,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -131,7 +131,7 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Debug\bin" "$(TargetDir)"
-xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData"
+xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData\"
 xcopy /E /Y  "$(SolutionDir)Dependencies\glew-2.1.0\bin\Release\x64" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -155,8 +155,8 @@ xcopy /E /Y  "$(SolutionDir)Dependencies\glew-2.1.0\bin\Release\x64" "$(TargetDi
       <AdditionalDependencies>osgViewer.lib;osgDB.lib;osg.lib;osgUtil.lib;osgGA.lib;opengl32.lib;glu32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\bin\osgPlugins-3.6.5" "$(TargetDir)osgPlugins-3.6.5"
-xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData"
+      <Command>xcopy /E /Y  "$(SolutionDir)Dependencies\OpenSceneGraphBinaries\OpenSceneGraph-3.6.5-VC2019-64-Release\bin\osgPlugins-3.6.5" "$(TargetDir)osgPlugins-3.6.5\"
+xcopy /E /Y /I "$(SolutionDir)Dependencies\OpenSceneGraphData" "$(TargetDir)OpenSceneGraphData\"
 xcopy /E /Y  "$(SolutionDir)Dependencies\glew-2.1.0\bin\Release\x64" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
