@@ -44,11 +44,11 @@ void AddOrAdjustSwitchNodeOption::displayGraphOption(TreeGeneratorVisitor* curre
 					}
 				}
 
-				if (ImGui::Button("Set all on")) {
+				if (ImGui::Button("Set all On")) {
 					currentSelectedSwitch->setAllChildrenOn();
 				}
 
-				if (ImGui::Button("Set all off")) {
+				if (ImGui::Button("Set all Off")) {
 					currentSelectedSwitch->setAllChildrenOff();
 				}
 

@@ -13,12 +13,12 @@ AddShaderOption::AddShaderOption()
 
 void AddShaderOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
-	if (ImGui::TreeNode("Add use of a shader")) {
+	if (ImGui::TreeNode("Add Use of a Ahader")) {
 
 		if (ImGui::TreeNode("Uniforms")) {
 			osg::StateSet::UniformList currentUniforms = stateSetOfCurrentlySelectedNode->getUniformList();
 
-			if (ImGui::TreeNode("Current uniforms")) {
+			if (ImGui::TreeNode("Current Uniforms")) {
 				for (const auto& [unifromName, uniformToFlagPair] : currentUniforms) {
 					ImGui::Text("	Name:");
 					ImGui::SameLine();
@@ -32,20 +32,20 @@ void AddShaderOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSet
 					ImGui::SameLine();
 					ImGui::Text(stateAttributeFlagToString[uniformToFlagPair.second].c_str());
 
-					if (ImGui::Button("Remove uniform")) {
+					if (ImGui::Button("Remove Uniform")) {
 						stateSetOfCurrentlySelectedNode->removeUniform(uniform);
 					}
 				}
 				ImGui::TreePop();
 			}
 
-			if (ImGui::TreeNode("Add uniform")) {
+			if (ImGui::TreeNode("Add Uniform")) {
 
 				UtilityFunctions::displayImGuiComboBox("S-Flag", availableFlags, uniformFlagSelectionIndex);
 
 				UtilityFunctions::displayImGuiComboBox("Uniform type", uniformTypes, uniformTypeSelectionIndex);
 
-				ImGui::InputText("Uniform name", uniformNameInput, IM_ARRAYSIZE(uniformNameInput));
+				ImGui::InputText("Uniform Name", uniformNameInput, IM_ARRAYSIZE(uniformNameInput));
 				std::string cleanedUniformName = uniformNameInput;
 				cleanedUniformName.erase(remove(cleanedUniformName.begin(), cleanedUniformName.end(), ' '), cleanedUniformName.end());
 
@@ -59,17 +59,17 @@ void AddShaderOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSet
 		if (vertexShaderFiles.size() > 0 && fragmentShaderFiles.size() > 0) {
 			if (ImGui::TreeNode("Shader")) {
 
-				UtilityFunctions::displayImGuiComboBox("Vertex shader to add", vertexShaderFiles, vertexShaderFileSelectionIndex);
+				UtilityFunctions::displayImGuiComboBox("Vertex Shader to Add", vertexShaderFiles, vertexShaderFileSelectionIndex);
 
-				UtilityFunctions::displayImGuiComboBox("Fragment shader to add", fragmentShaderFiles, fragmetShaderFileSelectionIndex);
+				UtilityFunctions::displayImGuiComboBox("Fragment Shader to Add", fragmentShaderFiles, fragmetShaderFileSelectionIndex);
 
-				UtilityFunctions::displayImGuiComboBox("Geometry shader to add", geometryShaderFiles, geometryShaderFileSelectionIndex);
+				UtilityFunctions::displayImGuiComboBox("Geometry Shader to Add", geometryShaderFiles, geometryShaderFileSelectionIndex);
 
 				UtilityFunctions::displayImGuiComboBox("Sh-Flag", availableFlags, shaderFlagSelectionIndex);
 
 				UtilityFunctions::displayImGuiComboBox("Sh-On/Off", onOffSelections, shaderOnOffSelectionIndex);
 
-				if (ImGui::Button("Add program with selected shader")) {
+				if (ImGui::Button("Add Program with Selected Shader")) {
 					osg::ref_ptr<osg::Program> program = new osg::Program;
 					osg::ref_ptr<osg::Shader> vertexShader = osgDB::readShaderFile(pathToShaderDirectory + vertexShaderFiles[vertexShaderFileSelectionIndex]);
 					osg::ref_ptr<osg::Shader> fragmentShader = osgDB::readShaderFile(pathToShaderDirectory + fragmentShaderFiles[fragmetShaderFileSelectionIndex]);

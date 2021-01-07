@@ -15,9 +15,9 @@ AdjustPolygonModeOption::AdjustPolygonModeOption() : StateSetOption()
 
 void AdjustPolygonModeOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
-	if (ImGui::TreeNode("Polygon mode")) {
+	if (ImGui::TreeNode("Polygon Mode")) {
 
-		ImGui::Text("Currently used:");
+		ImGui::Text("Currently Used:");
 
 		osg::ref_ptr<osg::PolygonMode> currentPolygonMode = dynamic_cast<osg::PolygonMode*>(stateSetOfCurrentlySelectedNode->getAttribute(osg::StateAttribute::POLYGONMODE));
 
@@ -36,7 +36,7 @@ void AdjustPolygonModeOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> 
 			ImGui::Text("	Polygon mode is not set for this node.");
 		}
 
-		ImGui::Text("Set polygon mode:");
+		ImGui::Text("Set Polygon Mode:");
 				
 		UtilityFunctions::displayImGuiComboBox("P-Face", polygonModeFaces, faceSelectionIndex);
 
@@ -44,7 +44,7 @@ void AdjustPolygonModeOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> 
 
 		UtilityFunctions::displayImGuiComboBox("P-Flag", availableFlags, flagSelectionIndex);
 
-		if (ImGui::Button("Set Polygon mode")) {
+		if (ImGui::Button("Set Polygon Mode")) {
 			currentPolygonMode = new osg::PolygonMode;
 			currentPolygonMode->setMode(selectionIdToPolygonModeFace[faceSelectionIndex], selectionIdToPolygonModeMode[modeSelectionIndex]);
 			stateSetOfCurrentlySelectedNode->setAttribute(currentPolygonMode, selectionIdToStateAttributeFlag[flagSelectionIndex]);

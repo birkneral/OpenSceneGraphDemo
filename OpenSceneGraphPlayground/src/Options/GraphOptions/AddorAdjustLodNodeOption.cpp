@@ -7,7 +7,7 @@ AddorAdjustLodNodeOption::AddorAdjustLodNodeOption()
 
 void AddorAdjustLodNodeOption::displayGraphOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
 {
-	if (ImGui::TreeNode("Add or adjust LOD Node")) {
+	if (ImGui::TreeNode("Add or Adjust LOD Node")) {
 
 		if (ImGui::Button("Add LOD")) {
 			osg::ref_ptr<osg::LOD> lodToAdd = new osg::LOD;
@@ -18,7 +18,7 @@ void AddorAdjustLodNodeOption::displayGraphOption(TreeGeneratorVisitor* currentT
 			osg::Node* selectedNode = currentTreeGeneratorVisitor->selectedNode;
 			osg::ref_ptr<osg::LOD> currentSelectedLod = dynamic_cast<osg::LOD*>(selectedNode);
 
-			if (ImGui::TreeNode("Current children")) {
+			if (ImGui::TreeNode("Current Children")) {
 
 				int numChildNodes = currentSelectedLod->getNumChildren();
 
@@ -47,10 +47,10 @@ void AddorAdjustLodNodeOption::displayGraphOption(TreeGeneratorVisitor* currentT
 				ImGui::TreePop();
 			}
 
-			if (ImGui::TreeNode("Add a child from file")) {
+			if (ImGui::TreeNode("Add a Child from File")) {
 				if (!availableOsgFiles.empty()) {
 
-					UtilityFunctions::displayImGuiComboBox("File to add", availableOsgFiles, fileSelectionIndex);
+					UtilityFunctions::displayImGuiComboBox("File to Add", availableOsgFiles, fileSelectionIndex);
 
 					ImGui::InputFloat("Min Range", &minRangeInput);
 					ImGui::InputFloat("Max Range", &maxRangeInput);

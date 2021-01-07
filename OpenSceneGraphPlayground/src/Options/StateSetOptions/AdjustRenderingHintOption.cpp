@@ -14,9 +14,9 @@ AdjustRenderingHintOption::AdjustRenderingHintOption()
 
 void AdjustRenderingHintOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
-	if (ImGui::TreeNode("Rendering hint")) {
+	if (ImGui::TreeNode("Rendering Hint")) {
 
-		ImGui::Text("Currently used:");
+		ImGui::Text("Currently Used:");
 
 		int currentRenderingHint = stateSetOfCurrentlySelectedNode->getRenderingHint();
 
@@ -24,11 +24,11 @@ void AdjustRenderingHintOption::displayStateSetOption(osg::ref_ptr<osg::StateSet
 		ImGui::SameLine();
 		ImGui::Text(renderingHintToString[currentRenderingHint].c_str());
 
-		ImGui::Text("Set rendering hint:");
+		ImGui::Text("Set Rendering Hint:");
 
-		UtilityFunctions::displayImGuiComboBox("Rendering hint", renderingHintOptions, renderingHintSelection);
+		UtilityFunctions::displayImGuiComboBox("Rendering Hint", renderingHintOptions, renderingHintSelection);
 
-		if (ImGui::Button("Set rendering hint")) {
+		if (ImGui::Button("Set Rendering Hint")) {
 			stateSetOfCurrentlySelectedNode->setRenderingHint(selectionIdToRenderingHint[renderingHintSelection]);
 		}
 

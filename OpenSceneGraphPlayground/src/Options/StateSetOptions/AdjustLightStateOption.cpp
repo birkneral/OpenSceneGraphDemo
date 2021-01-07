@@ -14,7 +14,7 @@ void AdjustLightStateOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> s
 
 			osg::StateAttribute::GLModeValue currentLightingState = stateSetOfCurrentlySelectedNode->getMode(GL_LIGHTING);
 
-			ImGui::Text("State of mode GL_LIGHTING:");
+			ImGui::Text("State of Mode GL_LIGHTING:");
 			ImGui::SameLine();
 			ImGui::Text(stateAttributeFlagToString[currentLightingState].c_str());
 
@@ -29,9 +29,9 @@ void AdjustLightStateOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> s
 			ImGui::TreePop();
 		}
 
-		if (ImGui::TreeNode("Single lights")) {
+		if (ImGui::TreeNode("Single Lights")) {
 
-			ImGui::Text("Current light states:");
+			ImGui::Text("Current Light States:");
 
 			int light0Value = GL_LIGHT0;
 
@@ -39,7 +39,7 @@ void AdjustLightStateOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> s
 			{
 				osg::StateAttribute::GLModeValue currentLightState = stateSetOfCurrentlySelectedNode->getMode(light0Value + i);
 
-				std::string stateLabel = "	State of mode GL_LIGHT";
+				std::string stateLabel = "	State of Mode GL_LIGHT";
 				stateLabel.append(std::to_string(i).c_str());
 				stateLabel.append(":");
 
@@ -48,7 +48,7 @@ void AdjustLightStateOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> s
 				ImGui::Text(stateAttributeFlagToString[currentLightState].c_str());
 			}
 
-			ImGui::Text("Set light states:");
+			ImGui::Text("Set Light States:");
 
 			for (int i = 0; i < 8; i++)
 			{

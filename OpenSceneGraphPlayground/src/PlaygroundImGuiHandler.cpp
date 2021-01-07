@@ -26,9 +26,9 @@ void PlaygroundImGuiHandler::drawUi()
 	ImGui::SetWindowSize(ImVec2(100, 300));
 	ImGui::Begin("Editor:");
 
-	if (ImGui::CollapsingHeader("Adjust scene graph")) {
+	if (ImGui::CollapsingHeader("Adjust Scene Graph")) {
 
-		ImGui::Text("Current scene graph:");
+		ImGui::Text("Current Scene Graph:");
 
 		treeGeneratorVisitor.rootNode = this->rootNode;
 		//Creates the tree with all nodes
@@ -76,9 +76,9 @@ void PlaygroundImGuiHandler::drawUi()
 		ImGui::Separator();
 	}
 
-	if (ImGui::CollapsingHeader("Change view")) {
+	if (ImGui::CollapsingHeader("Change View")) {
 		if (treeGeneratorVisitor.selectedNode != NULL) {
-			if (ImGui::Button("Focus currently selected node")) {
+			if (ImGui::Button("Focus Currently Selected Node")) {
 				nodeTrackballManipulator->setNode(treeGeneratorVisitor.selectedNode.get());
 			}
 		}

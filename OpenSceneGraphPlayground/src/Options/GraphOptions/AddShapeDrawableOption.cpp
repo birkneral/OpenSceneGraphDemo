@@ -10,7 +10,7 @@ AddShapeDrawableOption::AddShapeDrawableOption()
 void AddShapeDrawableOption::displayGraphOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
 {
 	if (ImGui::TreeNode("Add Shape Drawable")) {
-		UtilityFunctions::displayImGuiComboBox("Shape to add", typesOfShapes, shapeTypeSelectionIndex);
+		UtilityFunctions::displayImGuiComboBox("Shape to Add", typesOfShapes, shapeTypeSelectionIndex);
 
 		//Sphere is selected
 		if (shapeTypeSelectionIndex == 0) {

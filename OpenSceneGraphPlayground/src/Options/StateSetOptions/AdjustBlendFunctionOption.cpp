@@ -21,9 +21,9 @@ AdjustBlendFunctionOption::AdjustBlendFunctionOption()
 
 void AdjustBlendFunctionOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
-	if (ImGui::TreeNode("Blend function")) {
+	if (ImGui::TreeNode("Blend Function")) {
 
-		ImGui::Text("Currently used:");
+		ImGui::Text("Currently Used:");
 
 		osg::StateAttribute::GLModeValue currentBlendModeValue = stateSetOfCurrentlySelectedNode->getMode(GL_BLEND);
 
@@ -48,17 +48,17 @@ void AdjustBlendFunctionOption::displayStateSetOption(osg::ref_ptr<osg::StateSet
 			ImGui::Text("	There is no blend function set for this node.");
 		}
 
-		ImGui::Text("Set blend function:");
+		ImGui::Text("Set Blend Function:");
 
-		UtilityFunctions::displayImGuiComboBox("Source blend func", blendFuncSelection, sourceBlendFunctionSelectionIndex);
+		UtilityFunctions::displayImGuiComboBox("Source Blend Func", blendFuncSelection, sourceBlendFunctionSelectionIndex);
 
-		UtilityFunctions::displayImGuiComboBox("Destination blend func", blendFuncSelection, destinationBlendFunctionSelectionIndex);
+		UtilityFunctions::displayImGuiComboBox("Destination Blend Func", blendFuncSelection, destinationBlendFunctionSelectionIndex);
 
 		UtilityFunctions::displayImGuiComboBox("B-Flag", availableFlags, flagSelectionIndex);
 
 		UtilityFunctions::displayImGuiComboBox("B-On/Off", onOffSelections, modeOnOffSelectionIndex);
 
-		if (ImGui::Button("Set blend func")) {
+		if (ImGui::Button("Set Blend Func")) {
 			currentBlendFunction = new osg::BlendFunc;
 			currentBlendFunction->setFunction(blendModeSelectionToGLenum[sourceBlendFunctionSelectionIndex], blendModeSelectionToGLenum[destinationBlendFunctionSelectionIndex]);
 			stateSetOfCurrentlySelectedNode->setAttributeAndModes(currentBlendFunction, selectionIdToStateAttributeFlag[flagSelectionIndex] | selectionIdToStateAttributeModeOnOff[modeOnOffSelectionIndex]);

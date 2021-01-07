@@ -14,7 +14,7 @@ void AddNodeFromFileOption::displayGraphOption(TreeGeneratorVisitor* currentTree
 
 		if (!availableOsgFiles.empty()) {
 
-			UtilityFunctions::displayImGuiComboBox("File to add", availableOsgFiles, fileSelectionIndex);
+			UtilityFunctions::displayImGuiComboBox("File to Add", availableOsgFiles, fileSelectionIndex);
 
 			if (ImGui::Button("Add Node")) {
 				osg::ref_ptr<osg::Node> nodeToAdd = osgDB::readNodeFile(pathToDataDirectory + availableOsgFiles[fileSelectionIndex]);
