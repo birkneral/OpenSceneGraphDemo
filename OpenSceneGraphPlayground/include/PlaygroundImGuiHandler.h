@@ -3,6 +3,7 @@
 #include <osgGA\NodeTrackerManipulator>
 #include "OsgImGuiHandler.hpp"
 #include "TreeGeneratorVisitor.h"
+
 #include "Options\GraphOptions\AddGeodeOption.h"
 #include "Options\GraphOptions\AddGroupOption.h"
 #include "Options\GraphOptions\AddShapeDrawableOption.h"
@@ -14,6 +15,7 @@
 #include "Options\GraphOptions\AddLightSourceOption.h"
 #include "Options\GraphOptions\AddOrAdjustSwitchNodeOption.h"
 #include "Options\GraphOptions\AddOrAdjustLodNodeOption.h"
+
 #include "Options\StateSetOptions\AdjustStateOption.h"
 
 class PlaygroundImGuiHandler : public OsgImGuiHandler {
@@ -41,7 +43,8 @@ private:
 	AddGeometryOption addGeometryOption;
 	AddIndexedGeometryOption addIndexedGeometryOption;
 	AddLightSourceOption addLightSourceOption;
-	AdjustStateOption adjustStateOption;
 	AddOrAdjustSwitchNodeOption addOrAdjustSwitchNodeOption;
 	AddorAdjustLodNodeOption addOrAdjustLodNodeOption;
+
+	AdjustStateOption adjustStateOption;
 };

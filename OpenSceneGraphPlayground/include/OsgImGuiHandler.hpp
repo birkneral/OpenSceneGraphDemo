@@ -1,3 +1,6 @@
+// This header was not written during the project within the course "Programming of Graphics Shaders".
+// It was copied from the imgui-osg github repository of Tordan (link: https://github.com/Tordan/imgui-osg).
+
 #pragma once
 #include "windows.h"
 #include <osgViewer/ViewerEventHandlers>

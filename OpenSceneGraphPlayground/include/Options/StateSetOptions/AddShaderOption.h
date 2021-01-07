@@ -1,13 +1,11 @@
 #pragma once
 #include <Options\StateSetOption.h>
-#include <osg\PolygonMode>
-#include <osg\BlendFunc>
 
 class AddShaderOption : StateSetOption {
 public:
 	AddShaderOption();
 
-	void displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor) override;
+	void displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode) override;
 private:
 	std::string pathToShaderDirectory = "OpenSceneGraphData\\shaders\\";
 
@@ -41,7 +39,7 @@ private:
 	float uniformFloatMatFourRowThreeInput[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	float uniformFloatMatFourRowFourInput[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
-	const char* uniformTypes[8] = {
+	std::vector<std::string> uniformTypes = {
 	"GL_Float", "GL_FLOAT_VEC2", "GL_FLOAT_VEC3", "GL_FLOAT_VEC4",
 	"GL_INT", "GL_FLOAT_MAT2", "GL_FLOAT_MAT3", "GL_FLOAT_MAT4",
 	};

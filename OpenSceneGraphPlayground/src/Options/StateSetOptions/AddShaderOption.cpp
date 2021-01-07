@@ -11,11 +11,9 @@ AddShaderOption::AddShaderOption()
 	geometryShaderFiles.insert(geometryShaderFiles.begin(), " ");
 }
 
-void AddShaderOption::displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
+void AddShaderOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
 	if (ImGui::TreeNode("Add use of a shader")) {
-
-		osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode = currentTreeGeneratorVisitor->selectedNode->getOrCreateStateSet();
 
 		if (ImGui::TreeNode("Uniforms")) {
 			osg::StateSet::UniformList currentUniforms = stateSetOfCurrentlySelectedNode->getUniformList();

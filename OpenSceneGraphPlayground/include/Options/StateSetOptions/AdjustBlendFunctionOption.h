@@ -7,7 +7,7 @@ class AdjustBlendFunctionOption : StateSetOption {
 public:
 	AdjustBlendFunctionOption();
 
-	void displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor) override;
+	void displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode) override;
 private:
 
 	int sourceBlendFunctionSelectionIndex = 0;
@@ -15,7 +15,7 @@ private:
 	int flagSelectionIndex = 0;
 	int modeOnOffSelectionIndex = 0;
 
-	const char* blendFuncSelection[15] = { "GL_DST_ALPHA", "GL_DST_COLOR", "GL_ONE", "GL_ONE_MINUS_DST_ALPHA",
+	std::vector<std::string> blendFuncSelection = { "GL_DST_ALPHA", "GL_DST_COLOR", "GL_ONE", "GL_ONE_MINUS_DST_ALPHA",
 								   "GL_ONE_MINUS_DST_COLOR", "GL_ONE_MINUS_SRC_ALPHA", "GL_ONE_MINUS_SRC_COLOR", "GL_SRC_ALPHA",
 								   "GL_SRC_ALPHA_SATURATE", "GL_SRC_COLOR", "GL_CONSTANT_COLOR", "GL_ONE_MINUS_CONSTANT_COLOR",
 								   "GL_CONSTANT_ALPHA", "GL_ONE_MINUS_CONSTANT_ALPHA", "GL_ZERO",

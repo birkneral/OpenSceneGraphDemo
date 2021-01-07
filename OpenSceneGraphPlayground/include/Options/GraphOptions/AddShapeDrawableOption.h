@@ -7,7 +7,7 @@ public:
 
 	void displayGraphOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor) override;
 private:
-	const char* typesOfShapes[3] = { "Sphere", "Box", "Cone" };
+	std::vector<std::string> typesOfShapes = { "Sphere", "Box", "Cone" }; 
 
 	int shapeTypeSelectionIndex = 0;
 

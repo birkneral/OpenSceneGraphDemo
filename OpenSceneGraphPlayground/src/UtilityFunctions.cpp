@@ -1,23 +1,5 @@
 #include "UtilityFunctions.h"
 
-void UtilityFunctions::displayImGuiComboBox(std::string comboBoxLabel, const char* selectableValues[], int& selectionIndex)
-{
-	const char* currentSelection = selectableValues[selectionIndex];
-	if (ImGui::BeginCombo(comboBoxLabel.c_str(), currentSelection)) {
-		for (int n = 0; n < IM_ARRAYSIZE(selectableValues); n++)
-		{
-			const bool is_selected = (selectionIndex == n);
-			if (ImGui::Selectable(selectableValues[n], is_selected))
-				selectionIndex = n;
-
-			if (is_selected)
-				ImGui::SetItemDefaultFocus();
-		}
-		ImGui::EndCombo();
-	}
-
-}
-
 void UtilityFunctions::displayImGuiComboBox(std::string comboBoxLabel, std::vector<std::string> selectableValues, int& selectionIndex)
 {
 	const char* currentSelection = selectableValues[selectionIndex].c_str();

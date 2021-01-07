@@ -54,7 +54,7 @@ void PlaygroundImGuiHandler::drawUi()
 			addMatrixTransformOption.displayGraphOption(&treeGeneratorVisitor);
 			addOrAdjustSwitchNodeOption.displayGraphOption(&treeGeneratorVisitor);
 			addOrAdjustLodNodeOption.displayGraphOption(&treeGeneratorVisitor);
-			adjustStateOption.displayGraphOption(&treeGeneratorVisitor);
+			adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
 		}
 
 		if (treeGeneratorVisitor.selectedNodeIsGeode) {
@@ -62,11 +62,11 @@ void PlaygroundImGuiHandler::drawUi()
 			addGeometryOption.displayGraphOption(&treeGeneratorVisitor);
 			addIndexedGeometryOption.displayGraphOption(&treeGeneratorVisitor);
 			addMatrixTransformOption.displayGraphOption(&treeGeneratorVisitor);
-			adjustStateOption.displayGraphOption(&treeGeneratorVisitor);
+			adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
 		}
 
 		if (treeGeneratorVisitor.selectedNodeIsDrawable) {
-			adjustStateOption.displayGraphOption(&treeGeneratorVisitor);
+			adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
 		}
 
 		if (treeGeneratorVisitor.selectedNode != NULL && treeGeneratorVisitor.selectedNode.get() != rootNode.get()) {

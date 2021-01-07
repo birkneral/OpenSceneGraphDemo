@@ -19,11 +19,9 @@ AdjustBlendFunctionOption::AdjustBlendFunctionOption()
 	blendModeSelectionToGLenum[13] = GL_ZERO;
 }
 
-void AdjustBlendFunctionOption::displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
+void AdjustBlendFunctionOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
 	if (ImGui::TreeNode("Blend function")) {
-
-		osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode = currentTreeGeneratorVisitor->selectedNode->getOrCreateStateSet();
 
 		ImGui::Text("Currently used:");
 

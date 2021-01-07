@@ -12,11 +12,9 @@ AdjustRenderingHintOption::AdjustRenderingHintOption()
 	renderingHintToString[2] = "Transparent";
 }
 
-void AdjustRenderingHintOption::displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
+void AdjustRenderingHintOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
 	if (ImGui::TreeNode("Rendering hint")) {
-
-		osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode = currentTreeGeneratorVisitor->selectedNode->getOrCreateStateSet();
 
 		ImGui::Text("Currently used:");
 

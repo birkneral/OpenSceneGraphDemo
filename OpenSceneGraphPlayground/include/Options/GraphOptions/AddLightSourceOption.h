@@ -9,7 +9,7 @@ public:
 private:
 	int lightSourceTypeSelectionIndex = 0;
 
-	const char* lightSourceTypes[2] = { "Directional Light", "Point Light" };
+	std::vector<std::string> lightSourceTypes = { "Directional Light", "Point Light" };
 
 	bool overwriteDefaultLightInput = false;
 	float lightDirectionInput[3] = { 0.0f, 0.0f, 0.0f };

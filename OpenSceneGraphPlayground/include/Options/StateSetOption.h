@@ -6,10 +6,10 @@ class StateSetOption {
 public:
 	StateSetOption();
 
-	virtual void displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor) = 0;
+	virtual void displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode) = 0;
 protected:
-	const char* availableFlags[3] = { "OVERRIDE", "PROTECTED", "INHERITAT" };
-	const char* onOffSelections[2] = { "ON", "OFF" };
+	std::vector<std::string> availableFlags = { "OVERRIDE", "PROTECTED", "INHERITAT" };
+	std::vector<std::string> onOffSelections = { "ON", "OFF" };
 
 	std::map<int, std::string> glConstToStringMap;
 	std::map<unsigned int, std::string> stateAttributeFlagToString;

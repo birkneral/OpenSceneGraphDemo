@@ -7,11 +7,11 @@ class AdjustRenderingHintOption : StateSetOption {
 public:
 	AdjustRenderingHintOption();
 
-	void displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor) override;
+	void displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode) override;
 private:
 	int renderingHintSelection = 0;
 
-	const char* renderingHintOptions[3] = { "Default", "Opaque", "Transparent" };
+	std::vector<std::string> renderingHintOptions = { "Default", "Opaque", "Transparent" };
 
 	std::map<int, std::string> renderingHintToString;
 	std::map<int, osg::StateSet::RenderingHint> selectionIdToRenderingHint;

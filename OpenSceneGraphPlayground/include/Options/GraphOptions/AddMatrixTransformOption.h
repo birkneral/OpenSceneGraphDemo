@@ -13,7 +13,7 @@ private:
 	osg::ref_ptr<osg::MatrixTransform> generateRotateMatrixTransformNode();
 	osg::ref_ptr<osg::MatrixTransform> generateSclaeMatrixTransformNode();
 
-	const char* transformationTypes[3] = { "Translation", "Rotation", "Scale" };
+	std::vector<std::string> transformationTypes = { "Translation", "Rotation", "Scale" };
 
 	int transformTypeSelectionIndex = 0;
 

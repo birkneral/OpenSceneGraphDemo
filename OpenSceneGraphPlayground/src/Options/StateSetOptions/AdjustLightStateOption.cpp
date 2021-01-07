@@ -5,11 +5,9 @@ AdjustLightStateOption::AdjustLightStateOption() : StateSetOption()
 {
 }
 
-void AdjustLightStateOption::displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
+void AdjustLightStateOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
 	if (ImGui::TreeNode("Lights")) {
-
-		osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode = currentTreeGeneratorVisitor->selectedNode->getOrCreateStateSet();
 
 		if (ImGui::TreeNode("Overall Lighting")) {
 

@@ -13,11 +13,9 @@ AdjustPolygonModeOption::AdjustPolygonModeOption() : StateSetOption()
 
 }
 
-void AdjustPolygonModeOption::displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
+void AdjustPolygonModeOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
 	if (ImGui::TreeNode("Polygon mode")) {
-
-		osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode = currentTreeGeneratorVisitor->selectedNode->getOrCreateStateSet();
 
 		ImGui::Text("Currently used:");
 

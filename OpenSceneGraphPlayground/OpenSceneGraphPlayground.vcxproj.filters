@@ -182,9 +182,6 @@
     <ClInclude Include="include\Options\StateSetOptions\AdjustRenderingHintOption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Options\StateSetOptions\AdjustStateOption.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Options\GraphOptions\DeleteNodeOption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -192,6 +189,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Options\GraphOption.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Options\StateSetOptions\AdjustStateOption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,7 +7,7 @@ class AdjustLightStateOption : StateSetOption {
 public:
 	AdjustLightStateOption();
 
-	void displayStateSetOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor);
+	void displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode);
 private:
 	int lightingFlagSelectionIndex = 0;
 	int lightingOnOffSelectionIndex = 0;
