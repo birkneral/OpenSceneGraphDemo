@@ -20,6 +20,6 @@ To carry out operations on the scene graph, a node in the tree view of the Dear 
 ![Screenshot of the Editor](/Documentation/Screenshots/SelectionAndOptions.png)
 
 ## Not self-written Classes and Headers
-To be able to use Dear ImGui, all files within the [imgui folder in the include directory](/OpenSceneGraphPlayground/include/imgui), as well as all files within the [imgui folder in the src directory]((/OpenSceneGraphPlayground/src/imgui)) were copied from the [Dear ImGui repository](https://github.com/ocornut/imgui). 
+To be able to use Dear ImGui, all files within the [imgui folder in the include directory](/OpenSceneGraphPlayground/include/imgui), as well as all files within the [imgui folder in the src directory](/OpenSceneGraphPlayground/src/imgui) were copied from the [Dear ImGui repository](https://github.com/ocornut/imgui). 
 
 For the integration of Dear ImGui within OpenSceneGraph, the [OsgImGuiHandler class](/OpenSceneGraphPlayground/src/OsgImGuiHandler.cpp) and the [OsgImGuiHandler](/OpenSceneGraphPlayground/include/OsgImGuiHandler.cpp) header from [Tordans imgui-osg repository](https://github.com/Tordan/imgui-osg) were used.
