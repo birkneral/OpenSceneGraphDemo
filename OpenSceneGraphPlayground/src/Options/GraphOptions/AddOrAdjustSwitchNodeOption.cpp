@@ -8,7 +8,7 @@ AddOrAdjustSwitchNodeOption::AddOrAdjustSwitchNodeOption()
 
 void AddOrAdjustSwitchNodeOption::displayGraphOption(TreeGeneratorVisitor* currentTreeGeneratorVisitor)
 {
-	if (ImGui::TreeNode("Add or adjust Switch Node")) {
+	if (ImGui::TreeNode("Add or Adjust Switch Node")) {
 
 		if (ImGui::Button("Add Switch")) {
 			osg::ref_ptr<osg::Switch> switchToAdd = new osg::Switch;
@@ -18,7 +18,7 @@ void AddOrAdjustSwitchNodeOption::displayGraphOption(TreeGeneratorVisitor* curre
 		if (currentTreeGeneratorVisitor->selectedNode != NULL && std::strcmp(currentTreeGeneratorVisitor->selectedNode->className(), "Switch") == 0) {
 			if (ImGui::TreeNode("Adjust Switch Values")) {	
 				osg::ref_ptr<osg::Switch> currentSelectedSwitch = currentTreeGeneratorVisitor->selectedNode->asSwitch();
-				int numChildNodes = currentSelectedSwitch->getNumChildren();
+				unsigned int numChildNodes = currentSelectedSwitch->getNumChildren();
 
 				ImGui::Text("Children:");
 

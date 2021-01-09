@@ -13,7 +13,7 @@ AddShaderOption::AddShaderOption()
 
 void AddShaderOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> stateSetOfCurrentlySelectedNode)
 {
-	if (ImGui::TreeNode("Add Use of a Ahader")) {
+	if (ImGui::TreeNode("Add Use of a Shader")) {
 
 		if (ImGui::TreeNode("Uniforms")) {
 			osg::StateSet::UniformList currentUniforms = stateSetOfCurrentlySelectedNode->getUniformList();

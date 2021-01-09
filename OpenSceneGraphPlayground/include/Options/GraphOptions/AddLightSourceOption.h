@@ -12,8 +12,9 @@ private:
 	std::vector<std::string> lightSourceTypes = { "Directional Light", "Point Light" };
 
 	bool overwriteDefaultLightInput = false;
-	float lightDirectionInput[3] = { 0.0f, 0.0f, 0.0f };
+	float lightDirectionInput[3] = { 0.0f, 0.0f, 1.0f };
 	float lightPositionInput[3] = { 0.0f, 0.0f, 0.0f };
-	float diffuseLightColorInput[4] = { 0.4f, 0.7f, 0.0f, 1.0f };
-	float ambientLightColorInput[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+	float diffuseLightColorInput[4] = { 0.4f, 0.4f, 0.4f, 1.0f };
+	float ambientLightColorInput[4] = { 0.1f, 0.1f, 0.1f, 1.0f };	
+	float specularLightColorInput[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 };

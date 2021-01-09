@@ -13,6 +13,7 @@ PlaygroundImGuiHandler::PlaygroundImGuiHandler(osg::ref_ptr<osgViewer::Viewer> v
 	this->rootNode = rootNode;
 	nodeTrackballManipulator = new osgGA::NodeTrackerManipulator;
 	viewer->setCameraManipulator(nodeTrackballManipulator);
+	treeGeneratorVisitor.rootNode = this->rootNode;
 }
 
 void PlaygroundImGuiHandler::drawUi()
@@ -28,7 +29,6 @@ void PlaygroundImGuiHandler::drawUi()
 
 		ImGui::Text("Current Scene Graph:");
 
-		treeGeneratorVisitor.rootNode = this->rootNode;
 		//Creates the tree with all nodes
 		rootNode->accept(treeGeneratorVisitor);
 
@@ -44,31 +44,33 @@ void PlaygroundImGuiHandler::drawUi()
 
 		ImGui::Text("Options:");
 
-		if (treeGeneratorVisitor.selectedNodeIsGroup) {
-			addGeodeOption.displayGraphOption(&treeGeneratorVisitor);
-			addGroupOption.displayGraphOption(&treeGeneratorVisitor);
-			addNodeFromFileOption.displayGraphOption(&treeGeneratorVisitor);
-			addLightSourceOption.displayGraphOption(&treeGeneratorVisitor);
-			addMatrixTransformOption.displayGraphOption(&treeGeneratorVisitor);
-			addOrAdjustSwitchNodeOption.displayGraphOption(&treeGeneratorVisitor);
-			addOrAdjustLodNodeOption.displayGraphOption(&treeGeneratorVisitor);
-			adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
-		}
+		if (treeGeneratorVisitor.selectedNode != NULL) {
+			if (treeGeneratorVisitor.selectedNodeIsGroup) {
+				addGeodeOption.displayGraphOption(&treeGeneratorVisitor);
+				addGroupOption.displayGraphOption(&treeGeneratorVisitor);
+				addNodeFromFileOption.displayGraphOption(&treeGeneratorVisitor);
+				addLightSourceOption.displayGraphOption(&treeGeneratorVisitor);
+				addMatrixTransformOption.displayGraphOption(&treeGeneratorVisitor);
+				addOrAdjustSwitchNodeOption.displayGraphOption(&treeGeneratorVisitor);
+				addOrAdjustLodNodeOption.displayGraphOption(&treeGeneratorVisitor);
+				adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
+			}
 
-		if (treeGeneratorVisitor.selectedNodeIsGeode) {
-			addShapeDrawableOption.displayGraphOption(&treeGeneratorVisitor);
-			addGeometryOption.displayGraphOption(&treeGeneratorVisitor);
-			addIndexedGeometryOption.displayGraphOption(&treeGeneratorVisitor);
-			addMatrixTransformOption.displayGraphOption(&treeGeneratorVisitor);
-			adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
-		}
+			if (treeGeneratorVisitor.selectedNodeIsGeode) {
+				addShapeDrawableOption.displayGraphOption(&treeGeneratorVisitor);
+				addGeometryOption.displayGraphOption(&treeGeneratorVisitor);
+				addIndexedGeometryOption.displayGraphOption(&treeGeneratorVisitor);
+				addMatrixTransformOption.displayGraphOption(&treeGeneratorVisitor);
+				adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
+			}
 
-		if (treeGeneratorVisitor.selectedNodeIsDrawable) {
-			adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
-		}
+			if (treeGeneratorVisitor.selectedNodeIsDrawable) {
+				adjustStateOption.displayStateSetOption(treeGeneratorVisitor.selectedNode->getOrCreateStateSet());
+			}
 
-		if (treeGeneratorVisitor.selectedNode != NULL && treeGeneratorVisitor.selectedNode.get() != rootNode.get()) {
-			deleteNodeOption.displayGraphOption(&treeGeneratorVisitor);
+			if (treeGeneratorVisitor.selectedNode.get() != rootNode.get()) {
+				deleteNodeOption.displayGraphOption(&treeGeneratorVisitor);
+			}
 		}
 
 		ImGui::Separator();

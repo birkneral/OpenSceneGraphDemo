@@ -20,7 +20,7 @@ void AddorAdjustLodNodeOption::displayGraphOption(TreeGeneratorVisitor* currentT
 
 			if (ImGui::TreeNode("Current Children")) {
 
-				int numChildNodes = currentSelectedLod->getNumChildren();
+				unsigned int numChildNodes = currentSelectedLod->getNumChildren();
 
 				for (unsigned int i = 0; i < numChildNodes; i++)
 				{
@@ -78,8 +78,8 @@ void AddorAdjustLodNodeOption::displayGraphOption(TreeGeneratorVisitor* currentT
 
 				ImGui::TreePop();
 			}
-
-			ImGui::TreePop();
 		}
+
+		ImGui::TreePop();
 	}
 }

@@ -61,24 +61,23 @@ void AdjustLightStateOption::displayStateSetOption(osg::ref_ptr<osg::StateSet> s
 
 				std::string lightFlagLabel = "L-Flag";
 				lightFlagLabel.append(std::to_string(i).c_str());
-				lightFlagLabel.append(":");
 
 				UtilityFunctions::displayImGuiComboBox(lightFlagLabel, availableFlags, specificLightsFlagSelectionIndices[i]);
 
 				std::string lightOnOffLabel = "L-OnOff";
 				lightOnOffLabel.append(std::to_string(i).c_str());
-				lightOnOffLabel.append(":");
 
 				UtilityFunctions::displayImGuiComboBox(lightOnOffLabel, onOffSelections, specificLightsOnOffSelectionIndices[i]);
 
 				std::string lightButtonLabel = "Set Light";
 				lightButtonLabel.append(std::to_string(i).c_str());
-				lightButtonLabel.append(":");
 
 				if (ImGui::Button(lightButtonLabel.c_str())) {
 					stateSetOfCurrentlySelectedNode->setMode(light0Value + i, selectionIdToStateAttributeFlag[specificLightsFlagSelectionIndices[i]] | selectionIdToStateAttributeModeOnOff[specificLightsOnOffSelectionIndices[i]]);
 				}
 			}
+
+			ImGui::TreePop();
 		}
 
 		ImGui::TreePop();
