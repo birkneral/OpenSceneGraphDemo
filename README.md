@@ -17,6 +17,8 @@ The control of the application is mainly carried out via Dear ImGui. Most of the
 
 To carry out operations on the scene graph, a node in the tree view of the Dear ImGui window must be selected by mouse click (see number 1 on screenshot below). After the selection, all options that are possible for this type of node will be displayed in the ImGui window (see number 2 on screenshot below). If an option is opened, different GUI elements, depending on the operation, appear and the desired operation can be carried out by a button click.
 
+Hint: Some of the .osg and .osgt files like example.osg and morphing.osg cause a crash of the viewer of the playground project if they are added. They were not deleted, since they are part of the provided data of [OpenSceneGraph](http://www.openscenegraph.org/) Version 3.6.5 created by [Objexx Engineering](https://objexx.com/OpenSceneGraph.html).
+
 ![Screenshot of the Editor](/Documentation/Screenshots/SelectionAndOptions.png)
 
 ## Not self-written Classes and Headers
