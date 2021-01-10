@@ -1,6 +1,5 @@
 #pragma once
 #include "windows.h"
-#include <osgGA\NodeTrackerManipulator>
 #include "OsgImGuiHandler.hpp"
 #include "TreeGeneratorVisitor.h"
 
@@ -24,9 +23,7 @@ public:
 
 protected:
 	void drawUi() override;
-private:
-	osg::ref_ptr<osgGA::NodeTrackerManipulator> nodeTrackballManipulator;
-	
+private:	
 	osg::ref_ptr<osgViewer::Viewer> viewer;
 	osg::ref_ptr<osg::Group> rootNode;
 	TreeGeneratorVisitor treeGeneratorVisitor;

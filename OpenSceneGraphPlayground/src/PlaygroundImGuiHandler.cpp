@@ -11,8 +11,6 @@ PlaygroundImGuiHandler::PlaygroundImGuiHandler(osg::ref_ptr<osgViewer::Viewer> v
 {
 	this->viewer = viewer;
 	this->rootNode = rootNode;
-	nodeTrackballManipulator = new osgGA::NodeTrackerManipulator;
-	viewer->setCameraManipulator(nodeTrackballManipulator);
 	treeGeneratorVisitor.rootNode = this->rootNode;
 }
 
@@ -45,6 +43,7 @@ void PlaygroundImGuiHandler::drawUi()
 		ImGui::Text("Options:");
 
 		if (treeGeneratorVisitor.selectedNode != NULL) {
+
 			if (treeGeneratorVisitor.selectedNodeIsGroup) {
 				addGeodeOption.displayGraphOption(&treeGeneratorVisitor);
 				addGroupOption.displayGraphOption(&treeGeneratorVisitor);
@@ -77,10 +76,10 @@ void PlaygroundImGuiHandler::drawUi()
 	}
 
 	if (ImGui::CollapsingHeader("Change View")) {
-		if (treeGeneratorVisitor.selectedNode != NULL) {
-			if (ImGui::Button("Focus Currently Selected Node")) {
-				nodeTrackballManipulator->setNode(treeGeneratorVisitor.selectedNode.get());
-			}
+
+		if (ImGui::Button("Use new Trackball Manipulator")) {
+			osg::ref_ptr<osgGA::TrackballManipulator> nodeTrackballManipulator = new osgGA::TrackballManipulator;
+			viewer->setCameraManipulator(nodeTrackballManipulator);
 		}
 
 		ImGui::ColorEdit3("Background Color", backgroundColorInput);

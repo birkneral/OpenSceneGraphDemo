@@ -39,7 +39,9 @@ void AddorAdjustLodNodeOption::displayGraphOption(TreeGeneratorVisitor* currentT
 					ImGui::SameLine();
 					ImGui::Text(std::to_string(maxRange).c_str());
 
-					if (ImGui::Button("Remove")) {
+					std::string buttonLabel = "Remove" + std::to_string(i);
+
+					if (ImGui::Button(buttonLabel.c_str())) {
 						currentSelectedLod->removeChild(currentChild);
 					}
 				}

@@ -31,9 +31,12 @@ int main()
 	PlaygroundImGuiHandler *eventHandler = new PlaygroundImGuiHandler(viewer, root);
 
 	viewer.get()->setRealizeOperation(new GlewInitOperation);
+
 	viewer.get()->addEventHandler(eventHandler);
+
 	viewer.get()->addEventHandler(new osgViewer::StatsHandler);
-	viewer.get()->apply(new osgViewer::SingleWindow(100, 100, 1024, 600));
+
+	viewer.get()->apply(new osgViewer::SingleWindow(100, 100, 1400, 800));
 	viewer.get()->setSceneData(root.get());
 
 	return viewer.get()->run();
